@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		5836554C2D548CB200E5D07C /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5836554B2D548CB200E5D07C /* MainTabbarController.swift */; };
 		589BBE1D2D55E80B00427BA2 /* SupanaseManager+Memo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589BBE1C2D55E80B00427BA2 /* SupanaseManager+Memo.swift */; };
+		589BBE222D5EFE8200427BA2 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589BBE212D5EFE8200427BA2 /* RegisterVC.swift */; };
+		589BBE242D5F0AD600427BA2 /* RegisterVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589BBE232D5F0AD600427BA2 /* RegisterVC.xib */; };
+		589BBE262D5F10ED00427BA2 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589BBE252D5F10ED00427BA2 /* LoginVC.swift */; };
+		589BBE282D5F10FB00427BA2 /* LoginVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 589BBE272D5F10FB00427BA2 /* LoginVC.xib */; };
+		589BBE2A2D5F150300427BA2 /* AuthNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589BBE292D5F150300427BA2 /* AuthNavigationController.swift */; };
 		58AB5B182D54E72800D878F3 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 58AB5B172D54E72800D878F3 /* RealmSwift */; };
 		58AB5B192D54E72800D878F3 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = 58AB5B172D54E72800D878F3 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 		58AB5B1B2D54E73400D878F3 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 58AB5B1A2D54E73400D878F3 /* Supabase */; };
@@ -44,6 +49,11 @@
 /* Begin PBXFileReference section */
 		5836554B2D548CB200E5D07C /* MainTabbarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbarController.swift; sourceTree = "<group>"; };
 		589BBE1C2D55E80B00427BA2 /* SupanaseManager+Memo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SupanaseManager+Memo.swift"; sourceTree = "<group>"; };
+		589BBE212D5EFE8200427BA2 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
+		589BBE232D5F0AD600427BA2 /* RegisterVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterVC.xib; sourceTree = "<group>"; };
+		589BBE252D5F10ED00427BA2 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		589BBE272D5F10FB00427BA2 /* LoginVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginVC.xib; sourceTree = "<group>"; };
+		589BBE292D5F150300427BA2 /* AuthNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthNavigationController.swift; sourceTree = "<group>"; };
 		F296379C29F1DDAA00F74012 /* MyLocalTodoApp-tutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MyLocalTodoApp-tutorial.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F296379F29F1DDAA00F74012 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29637A129F1DDAA00F74012 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -160,6 +170,11 @@
 		589BBE1E2D5EFACF00427BA2 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				589BBE292D5F150300427BA2 /* AuthNavigationController.swift */,
+				589BBE212D5EFE8200427BA2 /* RegisterVC.swift */,
+				589BBE232D5F0AD600427BA2 /* RegisterVC.xib */,
+				589BBE252D5F10ED00427BA2 /* LoginVC.swift */,
+				589BBE272D5F10FB00427BA2 /* LoginVC.xib */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -278,10 +293,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				589BBE282D5F10FB00427BA2 /* LoginVC.xib in Resources */,
 				F29637AC29F1DDAC00F74012 /* LaunchScreen.storyboard in Resources */,
 				F29637A929F1DDAC00F74012 /* Assets.xcassets in Resources */,
 				F29637A729F1DDAA00F74012 /* Main.storyboard in Resources */,
 				F29637B629F1DEEB00F74012 /* MemoCell.xib in Resources */,
+				589BBE242D5F0AD600427BA2 /* RegisterVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,8 +311,11 @@
 			files = (
 				F29637A429F1DDAA00F74012 /* MemoListVC.swift in Sources */,
 				F29637A029F1DDAA00F74012 /* AppDelegate.swift in Sources */,
+				589BBE262D5F10ED00427BA2 /* LoginVC.swift in Sources */,
+				589BBE2A2D5F150300427BA2 /* AuthNavigationController.swift in Sources */,
 				F2E50DAB2D2D655600C270D2 /* MemoEntity.swift in Sources */,
 				F29637A229F1DDAA00F74012 /* SceneDelegate.swift in Sources */,
+				589BBE222D5EFE8200427BA2 /* RegisterVC.swift in Sources */,
 				F29637B529F1DEEB00F74012 /* MemoCell.swift in Sources */,
 				5836554C2D548CB200E5D07C /* MainTabbarController.swift in Sources */,
 				F2E50DAD2D2D676100C270D2 /* RealmManager.swift in Sources */,

@@ -31,5 +31,15 @@ class MainTabbarController: UITabBarController {
         self.setViewControllers([memoNavigationController,
                                  postVC,
                                  chatVC], animated: false)
-    }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2, execute:{ [weak self] in
+            
+            guard let self = self else {
+                return
+            }
+            
+            AuthNavigationController.present(parent: self)
+        })
+        
+    }  //viewDidLoad
 }
