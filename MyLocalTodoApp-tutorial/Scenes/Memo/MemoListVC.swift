@@ -23,11 +23,15 @@ class MemoListVC: UIViewController {
     
     @IBOutlet weak var currentPageLabel: UILabel!
     
+    @IBOutlet weak var currentLoggedInUserNicknameLabel: UILabel!
+    
     @IBOutlet weak var lastPageLabel: UILabel!
     
     var memoList : [Memo] = []
     
     var memoSubscription : RealtimeSubscription? = nil
+    
+    @IBOutlet weak var logoutButton: UIButton!
     
     var currentPage: Int = 1 {
         didSet {
@@ -68,10 +72,38 @@ class MemoListVC: UIViewController {
         addActions()
         configureSearchBar()
         reloadData()
-    
+        
+        logoutButton.addTarget(self, action: #selector(handleLogoutButton), for: .touchUpInside)
+        
         Task {
             await listenMemoChangeWithCompletion()
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(handleNotification(_:)), name: .dissmissAuth, object: nil)
+        
+        Task {
+            guard let currentUser = try? await SupabaseManager.shared.getCurrentUser() else {
+                return
+            }
+            self.currentLoggedInUserNicknameLabel.text = "접속 유저 : " + currentUser.nickname
+        }
+        
+    } //viewDidLoad
+    
+    @objc private func handleNotification(_ sender: Notification) {
+        
+        guard sender.name == .dissmissAuth else {
+            
+            return
+        }
+        
+        Task {
+            guard let currentUser = try? await SupabaseManager.shared.getCurrentUser() else {
+                return
+            }
+            self.currentLoggedInUserNicknameLabel.text = "접속 유저 : " + currentUser.nickname
+        }
+        
     }
     
     private func reloadData() {
@@ -186,6 +218,16 @@ class MemoListVC: UIViewController {
         sender.endRefreshing()
     }
 //MARK: - IBActions
+    @objc private func handleLogoutButton() {
+        Task {
+            do {
+                try await SupabaseManager.shared.logoutUser()
+            } catch {
+                print("error")
+            }
+        }
+    }
+    
     @IBAction func handleDataRefreshButton(_ sender: Any) {
         Task {
             do {
@@ -388,19 +430,15 @@ extension MemoListVC {
         
         let newMemo = Memo(content: userInput)
         
-        
-//        RealmManager.shared.createNewMemo(content: userInput, isDone: false)
-        
         Task {
-            try? await SupabaseManager.shared.createNewMemo(content: userInput, isDone: false)
+            do {
+                try? await SupabaseManager.shared.createNewMemo(content: userInput, isDone: false)
+            } catch {
+                print("error")
+            }
+           
         }
-        
-        
-        
-        
-//        memoList.insert(newMemo, at: 0)
-//        
-//        memoTableView.insertRows(at: [IndexPath(row: 0, section: 0)], with: .fade)
+
     }
     
     fileprivate func updateMemoListUI(_ updatedMemos: [Memo],

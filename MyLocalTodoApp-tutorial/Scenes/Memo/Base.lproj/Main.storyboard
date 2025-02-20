@@ -14,25 +14,25 @@
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="MemoListVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="MemoListVC" customModule="MyLocalTodoApp_tutorial" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="vEa-YC-Xnn">
-                                <rect key="frame" x="0.0" y="103" width="393" height="715"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="vEa-YC-Xnn">
+                                <rect key="frame" x="0.0" y="103" width="392.66666666666669" height="715"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" id="Fkc-8K-rl0">
-                                        <rect key="frame" x="0.0" y="0.0" width="393" height="20.333333333333332"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="392.66666666666669" height="20.333333333333332"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재페이지: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mbs-2Z-D2b">
-                                                <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="192.33333333333334" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="마지막페이지: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vgI-hg-x2u">
-                                                <rect key="frame" x="200.66666666666663" y="0.0" width="192.33333333333337" height="20.333333333333332"/>
+                                                <rect key="frame" x="200.33333333333331" y="0.0" width="192.33333333333331" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -40,11 +40,11 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" id="Sng-8R-xuU">
-                                        <rect key="frame" x="0.0" y="20.333333333333332" width="393" height="34.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="26.333333333333332" width="392.66666666666669" height="34.333333333333343"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" pointerInteraction="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fce-CR-aFn">
-                                                <rect key="frame" x="0.0" y="0.0" width="192.66666666666666" height="34.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="192.33333333333334" height="34.333333333333336"/>
                                                 <color key="backgroundColor" name="WidgetBackground"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
@@ -54,7 +54,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sCX-7M-dR7">
-                                                <rect key="frame" x="200.66666666666663" y="0.0" width="192.33333333333337" height="34.333333333333336"/>
+                                                <rect key="frame" x="200.33333333333331" y="0.0" width="192.33333333333331" height="34.333333333333336"/>
                                                 <color key="backgroundColor" name="WidgetBackground"/>
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
@@ -65,8 +65,27 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="JMv-nC-YRE">
+                                        <rect key="frame" x="0.0" y="66.666666666666657" width="392.66666666666669" height="34.333333333333343"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="현재 접속 사용자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FHd-VV-D8A">
+                                                <rect key="frame" x="0.0" y="0.0" width="266.66666666666669" height="34.333333333333336"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QpB-rd-hdP">
+                                                <rect key="frame" x="272.66666666666669" y="0.0" width="120" height="34.333333333333336"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="120" id="I4p-3o-4dh"/>
+                                                </constraints>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="filled" title="로그아웃"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="q1r-vH-sLA">
-                                        <rect key="frame" x="0.0" y="54.666666666666686" width="393" height="660.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="107" width="392.66666666666669" height="608"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     </tableView>
                                 </subviews>
@@ -89,9 +108,11 @@
                         </connections>
                     </navigationItem>
                     <connections>
+                        <outlet property="currentLoggedInUserNicknameLabel" destination="FHd-VV-D8A" id="Q2s-wk-ljr"/>
                         <outlet property="currentPageLabel" destination="mbs-2Z-D2b" id="F0a-uq-2Gh"/>
                         <outlet property="deleteAllBarBtn" destination="4ck-lk-6FZ" id="E5z-CI-2Ql"/>
                         <outlet property="lastPageLabel" destination="vgI-hg-x2u" id="sQa-IO-6Mh"/>
+                        <outlet property="logoutButton" destination="QpB-rd-hdP" id="mtz-a2-8Cx"/>
                         <outlet property="memoTableView" destination="q1r-vH-sLA" id="THV-7J-DuJ"/>
                         <outlet property="searchBar" destination="Fxw-II-Dpt" id="rU5-bR-W3f"/>
                         <outlet property="writeANewMemo" destination="AEL-U7-Kop" id="lC4-tS-6Sp"/>

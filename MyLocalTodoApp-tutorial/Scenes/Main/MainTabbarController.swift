@@ -41,5 +41,43 @@ class MainTabbarController: UITabBarController {
             AuthNavigationController.present(parent: self)
         })
         
+        handleAuthStatusChange()
+        
+        Task {
+            do {
+                if let currentUser = try await  SupabaseManager.shared.getCurrentUser() {
+                    print("\(currentUser)")
+                } else {
+                    AuthNavigationController.present(parent: self)
+                }
+            } catch {
+
+            }
+        }
+       
+        
     }  //viewDidLoad
+    
+    // 현재 접속상태 체크여부 -> 중요
+    private func handleAuthStatusChange() {
+        
+        Task {
+            // Using AsyncStream
+            for await (event, session) in SupabaseManager.shared.client.auth.authStateChanges {
+              print(event, session)
+                
+                switch event {
+                case .signedIn:
+                    print("로그인처리됨")
+                    NotificationCenter.default.post(name: .dissmissAuth, object: nil)
+                case .signedOut:
+                    print("로그아웃처리됨")
+                    AuthNavigationController.present(parent: self)
+                default:
+                    print("")
+                }
+            }
+        }
+    }
+    
 }

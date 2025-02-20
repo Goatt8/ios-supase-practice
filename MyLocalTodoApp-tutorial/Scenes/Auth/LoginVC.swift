@@ -27,6 +27,17 @@ class LoginVC: UIViewController {
     
     
     @IBAction func handleLoginButton(_ sender: Any) {
+        
+        let emailInput = emailTextField.text ?? ""
+        let passwordInput = passwordTextField.text ?? ""
+        
+        Task {
+            do {
+                try await SupabaseManager.shared.longinUser(email: emailInput, password: passwordInput)
+            } catch {
+                print("error")
+            }
+        }
     }
     
     @IBAction func handleMoveToRegisterButton(_ sender: Any) {

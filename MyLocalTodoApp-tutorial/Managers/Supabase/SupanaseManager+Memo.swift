@@ -56,11 +56,22 @@ extension SupabaseManager {
     //    // CREATE
     func createNewMemo(content: String, isDone: Bool) async throws {
         
-        let newMemoEntity = MemoServerEntity(content: content, isDone: isDone)
+        struct AddMemo : Encodable {
+            let content: String
+            let is_done: Bool
+            let user_id: UUID
+        }
+        
+//        let newMemoEntity = MemoServerEntity(content: content, isDone: isDone)
+        guard let currentUserId = client.auth.currentUser?.id else {
+            return
+        }
+        
+        let newMemo = AddMemo(content: content, is_done: isDone, user_id: currentUserId)
         
         try await client
             .from("memos")
-            .insert(newMemoEntity)
+            .insert(newMemo)
             .execute()
         
     }

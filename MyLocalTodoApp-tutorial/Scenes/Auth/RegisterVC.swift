@@ -30,6 +30,21 @@ class RegisterVC: UIViewController {
     }
     
     @IBAction func handleRegisterButton(_ sender: Any) {
+        
+        let emailInput = emailTextField.text ?? ""
+        let passwordInput = passwordTextField.text ?? ""
+        let passwordConfirmInput = passwordConfirmTextField.text ?? ""
+        let nicknameInput = nicknameTextField.text ?? ""
+        
+        Task {
+            do {
+                try await SupabaseManager.shared.registerUser(email: emailInput, password: passwordInput, nickname: nicknameInput)
+            } catch {
+                print("error")
+            }
+        }
+        
+        
     }
     
     @IBAction func handleMoveToLoginButton(_ sender: Any) {
